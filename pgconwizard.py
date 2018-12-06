@@ -14,6 +14,10 @@ class PgConfWizard:
         self.config = {}
     
     def read_file(self):
+        '''
+            read_file provides reading of the postgres.conf
+            file an parsing of config
+        '''
         for i, line in enumerate(open(self.filename)):
             splitter = line.split('\n')
             if len(splitter) == 0:
@@ -26,4 +30,5 @@ class PgConfWizard:
             # optionally line might not contains '='
             if len(splitter_line) == 1:
                 splitter_line = line.split(' ')
+            self.config[splitter_line[0]] = splitter_line[1]
 
