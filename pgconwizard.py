@@ -32,3 +32,15 @@ class PgConfWizard:
                 splitter_line = line.split(' ')
             self.config[splitter_line[0]] = splitter_line[1]
 
+
+class OptimialSettings:
+    def __init__(self):
+        pass
+    
+    def shared_buffers(self):
+        '''
+        In the simple case, shared buffers should be 1/4
+        from total memory
+        '''
+        return total_memory / 4
+
