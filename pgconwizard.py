@@ -16,5 +16,10 @@ class PgConfWizard:
     def read_file(self):
         for i, line in enumerate(open(self.filename)):
             splitter = line.split('\n')
-            self.config[splitter[0] = splitter[1]
+            if len(splitter) == 0:
+                continue
+            line = splitter[0]
+            # if line is comment, then go to the next one
+            if line[0] == '#':
+                continue
 
