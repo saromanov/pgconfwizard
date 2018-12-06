@@ -32,6 +32,12 @@ class PgConfWizard:
                 splitter_line = line.split(' ')
             self.config[splitter_line[0].strip()] = splitter_line[1].strip()
 
+    def attributes(self):
+        '''
+            attributes returns config map
+        '''
+        return self.config
+
 
 class OptimialSettings:
     def __init__(self):
