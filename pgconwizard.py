@@ -30,7 +30,7 @@ class PgConfWizard:
             # optionally line might not contains '='
             if len(splitter_line) == 1:
                 splitter_line = line.split(' ')
-            self.config[splitter_line[0]] = splitter_line[1]
+            self.config[splitter_line[0].strip()] = splitter_line[1].strip()
 
 
 class OptimialSettings:
