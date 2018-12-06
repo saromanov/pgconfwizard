@@ -1,3 +1,4 @@
+import platform
 from psutil import virtual_memory
 
 def total_memory():
@@ -6,6 +7,17 @@ def total_memory():
     on local machine
     '''
     return virtual_memory().total
+
+def get_architecture():
+    '''
+    return 32 if app running on 32 bit arch
+    or 64 if app running at 32 bit arch
+    '''
+    result = platform.architecture()
+    if len(result) != 2:
+        raise Exception("Unable to get platform.architecture")
+    return result[0].split('bit')
+
 
 
 class PgConfWizard:
