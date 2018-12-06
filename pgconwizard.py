@@ -60,5 +60,9 @@ class OptimialSettings:
         In the simple case, shared buffers should be 1/4
         from total memory
         '''
+        arch = get_architecture()
+        if arch is '32':
+            available_memory = 3000000000
+            return available_memory/1.5
         return total_memory / 4
 
