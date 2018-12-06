@@ -22,4 +22,8 @@ class PgConfWizard:
             # if line is comment, then go to the next one
             if line[0] == '#':
                 continue
+            splitter_line = line.split('=')
+            # optionally line might not contains '='
+            if len(splitter_line) == 1:
+                splitter_line = line.split(' ')
 
